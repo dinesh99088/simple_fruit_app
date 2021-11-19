@@ -8,7 +8,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      title: 'Input',
+      title: 'Fruits Mania',
       home: MyCustomForm(),
     );
   }
@@ -24,7 +24,7 @@ class MyCustomForm extends StatefulWidget {
 class _MyCustomFormState extends State<MyCustomForm> {
   final myController = TextEditingController();
   var fruits = ["Apple", "Mango", "Rambutan"];
-
+  var fruitColor = ["Green", "Yellow", "Red"];
   @override
   void dispose() {
     myController.dispose();
@@ -34,6 +34,9 @@ class _MyCustomFormState extends State<MyCustomForm> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('Fruit Mania'),
+      ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: TextField(
@@ -42,18 +45,22 @@ class _MyCustomFormState extends State<MyCustomForm> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          showDialog(
-            context: context,
-            builder: (context) {
-              return AlertDialog(
-                // Retrieve the text the user has entered by using the
-                // TextEditingController.
-                content: Text(myController.text),
-              );
-            },
-          );
+          if (myController.text == "1") {
+            showDialog(
+              context: context,
+              builder: (context) {
+                return AlertDialog(
+                  content: Text("You choose " +
+                      fruits[0] +
+                      " and it is of Color " +
+                      fruitColor[0]),
+                );
+              },
+            );
+          
         },
-        child: Icon(Icons.text_fields),
+        tooltip: 'Show Fruits',
+        child: const Icon(Icons.text_fields),
       ),
     );
   }
