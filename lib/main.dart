@@ -57,7 +57,43 @@ class _MyCustomFormState extends State<MyCustomForm> {
                 );
               },
             );
-          
+          } else if (myController.text == "2") {
+            showDialog(
+              context: context,
+              builder: (context) {
+                return AlertDialog(
+                  content: Text("You choose " +
+                      fruits[1] +
+                      " and it is of Color " +
+                      fruitColor[1]),
+                );
+              },
+            );
+          } else if (myController.text == "3") {
+            showDialog(
+              context: context,
+              builder: (context) {
+                return AlertDialog(
+                  content: Text("You choose " +
+                      fruits[2] +
+                      " and it is of Color " +
+                      fruitColor[2]),
+                  //content: Text(fruits[2]),
+                );
+              },
+            );
+          } else {
+            showDialog(
+              context: context,
+              builder: (context) {
+                return AlertDialog(
+                  content: Text(
+                      "Enter Number only between 1 to 3, no text character allowed"),
+                  //content: Text(fruits[2]),
+                );
+              },
+            );
+          }
         },
         tooltip: 'Show Fruits',
         child: const Icon(Icons.text_fields),
