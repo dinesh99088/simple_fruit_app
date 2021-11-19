@@ -4,5 +4,6 @@ A new Flutter project.
 
 ## screenshots
 ![](images/fruitss1.PNG)
+![](images/fruitss2.PNG)
 
 
