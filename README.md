@@ -3,6 +3,6 @@
 A new Flutter project.
 
 ## screenshots
-![](images/fruitss1.png)
+![](images/fruitss1.PNG)
 
 
